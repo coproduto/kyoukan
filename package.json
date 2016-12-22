@@ -10,7 +10,7 @@
     "runConsole": "node dist/node-bundle.js",
     "runWeb": "node dist/web-bundle.js",
     "runDev": "babel-node src/app.js",
-    "test": "mocha --compilers js:babel-register --require babel-polyfill",
+    "test": "mocha --compilers js:babel-register --require babel-polyfill --recursive",
     "makeBrowserTests": "webpack --config test.webpack.config.js",
     "browserTest": "npm run makeBrowserTests && firefox browser-tests.html",
     "clean": "rm -rf dist/*",
