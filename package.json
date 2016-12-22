@@ -1,0 +1,43 @@
+{
+  "name": "musical",
+  "version": "0.0.1",
+  "description": "Emotion tracking",
+  "main": "src/app.js",
+  "scripts": {
+    "build": "webpack",
+    "buildWeb": "npm run build",
+    "buildNode": "npm run build -- --target node",
+    "runConsole": "node dist/node-bundle.js",
+    "runWeb": "node dist/web-bundle.js",
+    "runDev": "babel-node src/app.js",
+    "test": "mocha --compilers js:babel-register --require babel-polyfill",
+    "makeBrowserTests": "webpack --config test.webpack.config.js",
+    "browserTest": "npm run makeBrowserTests && firefox browser-tests.html",
+    "clean": "rm -rf dist/*",
+    "flow": "flow 2> /dev/null || echo 'Done.'",
+    "babel": "babel"
+  },
+  "author": "Pedro Castilho",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-plugin-transform-flow-strip-types": "^6.21.0",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-env": "^1.1.4",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "flow-bin": "^0.37.4",
+    "lodash-webpack-plugin": "^0.10.6",
+    "mocha": "^3.2.0",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.20.0",
+    "bluebird": "^3.4.6",
+    "lodash": "^4.17.2",
+    "spotify-web-api-node": "^2.3.6"
+  }
+}
