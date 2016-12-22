@@ -14,7 +14,7 @@ function randomString(length) {
 
     const outputLength = length > 0 ? Math.ceil(length/precision) : 0;
 
-    return Array(outputLength).join(delimiter).slice(0, length);
+    return Array(outputLength + 1).join(delimiter).slice(0, length);
 }
 
 describe('upcaseList', () => {
