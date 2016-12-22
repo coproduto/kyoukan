@@ -1,19 +1,44 @@
 {
-    "plugins": [
-	"lodash",
-	"transform-flow-strip-types"
-    ],
-    "presets": [
-	["env", {
-    	    "targets": {
-		"node": "current",
-		"browsers": [
-		    "last 2 versions",
-		    "> 5%",
-		]
-	    },
-	    "modules": "commonjs",
-	    "useBuiltIns": true
-	}]
-    ]
+    "env": {
+	"development": {
+	    "plugins": [
+		"lodash",
+		"transform-flow-strip-types",
+		"babel-root-import"
+	    ],
+	    "presets": [
+		["env", {
+    		    "targets": {
+			"node": "current",
+			"browsers": [
+			    "last 1 versions",
+			    "> 5%",
+			]
+		    },
+		    "modules": "commonjs",
+		    "useBuiltIns": true
+		}]
+	    ]
+	},
+	"production": {
+	    "plugins": [
+		"lodash",
+		"transform-flow-strip-types",
+		"babel-root-import"
+	    ],
+	    "presets": [
+		["env", {
+    		    "targets": {
+			"node": "current",
+			"browsers": [
+			    "last 3 versions",
+			    "> 5%",
+			]
+		    },
+		    "modules": "amd",
+		    "useBuiltIns": true
+		}]
+	    ]
+	},
+    }
 }
