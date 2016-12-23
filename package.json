@@ -2,19 +2,20 @@
   "name": "kyoukan",
   "version": "0.0.1",
   "description": "Emotion tracking",
+  "repository": "https://github.com/pcstl/kyoukan",
   "main": "src/app.js",
   "scripts": {
     "build": "webpack --config client.webpack.config.js",
     "buildWeb": "npm run build",
     "buildNode": "npm run build -- --target node",
     "runConsole": "node dist/node-bundle.js",
-    "startServer":  "node src/server/server.js",
+    "startServer": "npm run buildWeb && node src/server/server.js",
     "runWeb": "node dist/web-bundle.js",
     "runDev": "babel-node src/app.js",
     "test": "mocha --compilers js:babel-register --require babel-polyfill --recursive",
     "makeBrowserTests": "webpack --config test.webpack.config.js",
     "browserTest": "npm run makeBrowserTests && firefox browser-tests.html",
-    "clean": "rm -rf dist/*",
+    "clean": "rm -rf dist/*.js dist/web/js/web-bundle.js",
     "flow": "flow 2> /dev/null || echo 'Done.'",
     "babel": "babel"
   },
@@ -39,7 +40,12 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.20.0",
+    "blessed": "^0.1.81",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
     "lodash": "^4.17.2",
+    "querystring": "^0.2.0",
+    "request": "^2.79.0",
     "spotify-web-api-node": "^2.3.6"
   }
 }

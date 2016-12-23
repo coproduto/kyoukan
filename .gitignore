@@ -46,5 +46,9 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
-#Webpack output
-dist/*
+# Webpack output
+
+*-bundle.js
+
+#Private stuff
+TODO

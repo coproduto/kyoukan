@@ -51,7 +51,7 @@ var config = {
     entry: ['./src/client/app.js'],
     output: {
 	filename: filename,
-	path: path.join(__dirname, './dist')
+	path: (target === "node" ? path.join(__dirname, './dist') : path.join(__dirname, './dist/web/js'))
     }
 };
 
