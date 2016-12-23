@@ -2,7 +2,7 @@
 
 import { expect } from 'chai';
 
-describe('Arithmetic', () => {
+describe('Arithmetic (client)', () => {
     it('should calculate 1 + 1 correctly', () => {
 	expect(1 + 1).to.equal(2);
     });

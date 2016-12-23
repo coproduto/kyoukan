@@ -48,7 +48,7 @@ var config = {
 	})
     ],
     target: target,
-    entry: ['./src/app.js'],
+    entry: ['./src/client/app.js'],
     output: {
 	filename: filename,
 	path: path.join(__dirname, './dist')

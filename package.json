@@ -4,10 +4,11 @@
   "description": "Emotion tracking",
   "main": "src/app.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config client.webpack.config.js",
     "buildWeb": "npm run build",
     "buildNode": "npm run build -- --target node",
     "runConsole": "node dist/node-bundle.js",
+    "startServer":  "node src/server/server.js",
     "runWeb": "node dist/web-bundle.js",
     "runDev": "babel-node src/app.js",
     "test": "mocha --compilers js:babel-register --require babel-polyfill --recursive",
