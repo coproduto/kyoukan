@@ -43,7 +43,8 @@
 		}
 	    });
 
-	    var client = require('web-bundle');
+	    const commonClient = require('~/src/client/common/app');
+	    console.log(commonClient);
 	} else {
 	    // render initial screen
 	    $('#login').show();

@@ -48,7 +48,7 @@ var config = {
 	})
     ],
     target: target,
-    entry: ['./src/client/app.js'],
+    entry: (target === "node" ? ['./src/client/common/app.js'] : ['./src/client/web/client.js']),
     output: {
 	filename: filename,
 	path: (target === "node" ? path.join(__dirname, './dist') : path.join(__dirname, './dist/web/js'))
