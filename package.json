@@ -6,12 +6,14 @@
   "main": "src/app.js",
   "scripts": {
     "build": "webpack --config client.webpack.config.js",
-    "buildWeb": "npm run build",
+    "buildWeb": "npm run build && npm run copyWebAssets",
     "buildNode": "npm run build -- --target node",
     "runConsole": "node dist/node-bundle.js",
-    "startServer": "npm run buildWeb && node src/server/server.js",
-    "runWeb": "node dist/web-bundle.js",
+    "copyWebAssets": "cp public/{index.html, js} dist/web/"
+    "startTestServer": "npm run buildWeb && node src/test-server/server.js",
+    "runWeb": "firefox dist/web-bundle.js",
     "runDev": "babel-node src/app.js",
+    "runNode":  "node node-bundle.js",
     "test": "mocha --compilers js:babel-register --require babel-polyfill --recursive",
     "makeBrowserTests": "webpack --config test.webpack.config.js",
     "browserTest": "npm run makeBrowserTests && firefox browser-tests.html",
